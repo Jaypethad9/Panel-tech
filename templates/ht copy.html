@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Home|Panel Technologies{% endblock title %}
+{% block body %}
+{% load static %}
+
+<link rel="stylesheet" tyye="text/css" href="{% static 'ht.css' %}"/>
+<body style="background-image: url('{% static "Wave (7).svg"%}')";>
+<div class="logiii" >
+    <div class="login"> 
+        <div class="avatar">
+        <img src="static\img_avatar.png"> 
+    </div> 
+    <h2>Sign up</h2>
+    <h3>Welcome</h3> 
+    <form action="register" method="POST" class="login-form">
+        {% csrf_token %}
+        <div class="textbox">
+            <input type="text" id="username" name="username" placeholder="Name" required/> 
+            <span class="material-symbols-outlined"> 
+            </span>
+        </div>  
+        <div class="textbox">
+            <input type="number" placeholder="Phone Number" required/> 
+            <span class="material-symbols-outlined"> 
+            </span>
+        </div>  
+        <div class="textbox">
+            <input type="email" id="email" name="email" placeholder="Email" required> 
+                <span class="material-symbols-outlined">
+                </span>
+    </div> 
+    <div class="textbox">
+        <input type="password" id="password1" name="password1" placeholder="Password" required/> 
+        <span class="material-symbols-outlined"> 
+        </span>
+    </div> 
+    <div class="textbox">
+        <input type="password" id="password2" name="password2" placeholder="Re-Enter Password" required/> 
+        <span class="material-symbols-outlined"> 
+        </span>
+    </div> 
+    
+    <button type="submit">Sign up</button> 
+    <a href="login">
+        ALREADY HAVE ACCOUNT?
+    </a> 
+    </form>
+    </div>   
+
+</div>   
+{% endblock body %}

@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+
+{% block title %}Search{% endblock title %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" tyye="text/css" href="{% static 'cont.css' %}"/>
+<body style="background-image: url('{% static "Rect Light.svg"%}')";>
+<div class="mx-4 my-4 px-4 py-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for pros in all %}
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="{{pros.img.url}}" alt="" >
+        <div class="card-body">
+          <p class="card-text"></p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group" >
+              <a href="{{pros.desc}}">
+              <button type="button" class="btn btn-sm btn-outline-secondary " style="margin-right:8px">{{pros.name}}</button>
+            </a>
+            
+            <a href="contact">
+            <button type="button" class="btn btn-sm btn-outline-secondary" >Order</button>
+            </a>
+            </div>
+ 
+            <small class="text-muted"><h4>Catagory:<br> {{pros.catagory}}</h4></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+<div>
+{% endblock body %}
